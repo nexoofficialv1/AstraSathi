@@ -36,6 +36,9 @@ jobs:
           gradle-version: '8.9'
           cache-provider: basic
 
+      - name: Set up Android SDK tools
+        uses: android-actions/setup-android@v4
+
       - name: Ensure Android SDK 35 is installed
         shell: bash
         run: |
