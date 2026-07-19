@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="forest">#123F35</color>
+    <color name="forest_dark">#092B25</color>
+    <color name="mint">#DDF4E9</color>
+    <color name="cream">#FFF9EC</color>
+    <color name="gold">#E3A827</color>
+    <color name="ink">#17201E</color>
+    <color name="muted">#687572</color>
+    <color name="white">#FFFFFF</color>
+    <color name="line">#E2E7E4</color>
+    <color name="danger">#B3261E</color>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Astra Sathi</string>
+    <string name="app_name_bn">অ্যাস্ট্রা সাথী</string>
+    <string name="tagline">আপনার ব্যক্তিগত বাংলা সহকারী</string>
+    <string name="ready">আমি প্রস্তুত</string>
+    <string name="tap_to_speak">মাইক্রোফোনে চাপুন, তারপর বাংলায় বলুন</string>
+    <string name="listening">শুনছি…</string>
+    <string name="thinking">কমান্ডটি বুঝছি…</string>
+    <string name="hint_command">কমান্ড লিখুন—যেমন: সকাল ৭টায় অ্যালার্ম দাও</string>
+    <string name="run_command">কাজটি করো</string>
+    <string name="recent_title">সর্বশেষ ফলাফল</string>
+    <string name="examples_title">দ্রুত কমান্ড</string>
+    <string name="privacy_line">সংবেদনশীল কাজ আপনার অনুমতি ছাড়া সম্পন্ন হবে না</string>
+    <string name="footer">© Astra Technologies</string>
+    <string name="accessibility_description">বাংলা ভয়েস কমান্ডে স্ক্রিনের লেখা পড়া, বোতাম চাপা, টাইপ, স্ক্রল এবং ফোন নেভিগেশন করতে সাহায্য করে। কোনো কাজ শুরুর আগে ব্যবহারকারী নিজে কমান্ড দেন।</string>
+</resources>

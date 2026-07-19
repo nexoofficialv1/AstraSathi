@@ -1,0 +1,87 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-apk-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-debug-apk:
+    name: Test and build installable APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v7
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle 8.9
+        uses: gradle/actions/setup-gradle@v6
+        with:
+          gradle-version: '8.9'
+          cache-provider: basic
+
+      - name: Ensure Android SDK 35 is installed
+        shell: bash
+        run: |
+          sdkmanager "platforms;android-35" "build-tools;34.0.0"
+
+      - name: Run Bengali command and project checks
+        shell: bash
+        run: |
+          bash scripts/test_parser.sh
+          bash scripts/validate_project.sh
+
+      - name: Build signed debug APK
+        shell: bash
+        run: |
+          gradle --no-daemon --stacktrace assembleDebug
+
+      - name: Prepare downloadable APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          source_apk="app/build/outputs/apk/debug/app-debug.apk"
+          test -f "$source_apk"
+          mkdir -p dist
+          cp "$source_apk" "dist/AstraSathi-v0.6.0-debug.apk"
+          sha256sum "dist/AstraSathi-v0.6.0-debug.apk" > "dist/SHA256SUMS.txt"
+          {
+            echo "App: Astra Sathi"
+            echo "Version: 0.6.0-life-context"
+            echo "Commit: $GITHUB_SHA"
+            echo "Build run: $GITHUB_RUN_NUMBER"
+            echo "Type: installable debug APK"
+          } > "dist/BUILD_INFO.txt"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: AstraSathi-APK-${{ github.run_number }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload build reports on failure
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: AstraSathi-build-reports-${{ github.run_number }}
+          path: app/build/reports/
+          if-no-files-found: ignore
+          retention-days: 7

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cream"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="22dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Astra Sathi Dialer"
+            android:textColor="@color/forest"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="ফোন নম্বর লিখে call করুন অথবা বাংলায় বলুন—মাকে ফোন করো।"
+            android:textColor="@color/muted"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/dialerNumber"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_input"
+            android:hint="ফোন নম্বর"
+            android:inputType="phone"
+            android:padding="14dp"
+            android:textColor="@color/ink"
+            android:textColorHint="@color/muted"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/placeCallButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_primary_button"
+            android:text="কল করুন"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="সাম্প্রতিক Call"
+            android:textColor="@color/ink"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/recentCallsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:text="Call history loading…"
+            android:textColor="@color/ink"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/dialerBackButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/bg_quick_button"
+            android:text="সহকারীতে ফিরে যান"
+            android:textAllCaps="false"
+            android:textColor="@color/forest" />
+    </LinearLayout>
+</ScrollView>

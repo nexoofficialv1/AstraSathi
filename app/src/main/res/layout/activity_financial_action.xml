@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/cream" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="18dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Financial Action Preview" android:textColor="@color/forest"
+            android:textSize="27sp" android:textStyle="bold" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:text="Voice order কখনও সরাসরি screen click দিয়ে trade করবে না। Official broker API ও transaction-specific authentication আবশ্যক।"
+            android:textColor="@color/danger" android:textSize="14sp" />
+        <TextView android:id="@+id/tradeValidationText" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="16dp"
+            android:background="@drawable/bg_quick_button" android:padding="14dp"
+            android:text="Order পরীক্ষা করা হচ্ছে…" android:textSize="15sp" android:textStyle="bold" />
+        <TextView android:id="@+id/tradeSummaryText" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="12dp"
+            android:background="@drawable/bg_card" android:textColor="@color/ink" android:textSize="16sp" />
+        <TextView android:id="@+id/brokerStatusText" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="12dp"
+            android:background="@drawable/bg_input" android:padding="14dp" android:textSize="15sp" />
+        <Button android:id="@+id/connectBrokerButton" android:layout_width="match_parent"
+            android:layout_height="50dp" android:layout_marginTop="12dp"
+            android:background="@drawable/bg_quick_button" android:text="Official Broker API সংযোগ"
+            android:textAllCaps="false" android:textColor="@color/forest" android:textStyle="bold" />
+        <Button android:id="@+id/approveTradeButton" android:layout_width="match_parent"
+            android:layout_height="52dp" android:layout_marginTop="10dp"
+            android:background="@drawable/bg_primary_button" android:text="Authenticate ও Order Submit"
+            android:textAllCaps="false" android:textColor="@color/white" android:textStyle="bold" />
+        <Button android:id="@+id/closeFinancialButton" android:layout_width="match_parent"
+            android:layout_height="48dp" android:layout_marginTop="10dp" android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_quick_button" android:text="বাতিল করে ফিরে যান"
+            android:textAllCaps="false" android:textColor="@color/danger" />
+    </LinearLayout>
+</ScrollView>
