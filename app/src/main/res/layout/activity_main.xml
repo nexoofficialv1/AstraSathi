@@ -173,7 +173,7 @@
             </LinearLayout>
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
                 <Button android:id="@+id/quickReminder" style="@style/QuickButton" android:text="✓ রিমাইন্ডার" />
-                <Button android:id="@+id/quickHelp" style="@style/QuickButton" android:text="? কী বলতে পারি" />
+                <Button android:id="@+id/quickHelp" style="@style/QuickButton" android:text="কী বলতে পারি?" />
             </LinearLayout>
         </LinearLayout>
 
